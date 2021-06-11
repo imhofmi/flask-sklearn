@@ -20,7 +20,9 @@ A short [demo](#demo) concludes the documentation.
 
 [![Python application test with Github Actions](https://github.com/imhofmi/flask-sklearn/actions/workflows/python-app.yml/badge.svg)](https://github.com/imhofmi/flask-sklearn/actions/workflows/python-app.yml)
 
+<!---
 [![Build Status](https://dev.azure.com/daimler-mic/ddpdev-azure-devops/_apis/build/status/imhofmi.flask-sklearn?branchName=main)](https://dev.azure.com/daimler-mic/ddpdev-azure-devops/_build/latest?definitionId=7205&branchName=main)
+-->
 
 ## Project Plan
 
@@ -33,37 +35,21 @@ The [Trello board](https://trello.com/b/ppxOVR52/ml-application) is then used fo
 
 ## Instructions
 
-<TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
+The overall architecture of this project is as follows:
 
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
+![Architecture](architecture/Architecture.png "Architecture")
 
-* Project running on Azure App Service
+The code resides in a GitHub repo together with test cases that can be used for quality assurance.
 
-* Project cloned into Azure Cloud Shell
+A manual code checkout allows for local integration and testing, see [Cloning and testing locally](#cloning-and-testing-locally).
 
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
+Continuous Integration (CI) of the code is performed upon each commit via GitHub Actions, see [Setting up CI using Github Actions](#setting-up-ci-using-github-actions).
 
-* Output of a test run
+The code can be executed in the cloud as a webapp in Azure App Services, see [Deploying to Azure App Services](#deploying-to-azure-app-services).
 
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
+Finally, the combination of Continuous integration and Continuous Delivery (CI/CD) via Azure Pipelines is used to automatically reflect all comitted changes in the running webapp, see [Setting up CI/CD using Azure Pipelines](#setting-up-cicd-using-azure-pipelines).
 
-* Running Azure App Service from Azure Pipelines automatic deployment
-
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:
-
-```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
-```
-
-* Output of streamed log files from deployed application
-
-> 
-
-### Cloning and testing locally
+### Cloning and Testing Locally
 
 Head to https://github.com and clone the repo https://github.com/imhofmi/flask-sklearn.
 The following instructions will use the original repo, you should replace them with your cloned repo.
@@ -85,7 +71,7 @@ azureuser@Azure:~/flask-sklearn$ source ~/.flask-sklearn/bin/activate
 ![Clone repo / Create virtual environment](screenshots/S1-clone-make-source.PNG "Clone repo / Create virtual environment")
 
 
-Build locally (install dependencies, lint, test):
+Build locally using 'make all' which will install all dependencies, perform linting and testing:
 ```bash
 azureuser@Azure:~/flask-sklearn$ make all
 ```
@@ -112,6 +98,29 @@ azureuser@Azure:~$ source .flask-sklearn/bin/activate
 Close the second cloud shell and stop flask by hitting CRTL-C in the first cloud shell.
 
 
+### Setting up CI using Github Actions
+If you directly jumped to this section: Clone the repo:
+```bash
+azureuser@Azure:~$ git clone git@github.com:imhofmi/flask-sklearn.git
+```
+![Clone repo](screenshots/01_Cloud_Shell_Project_Cloned.PNG "Clone Repo")
+Setup a virtual environment and activate it:
+```bash
+azureuser@Azure:~/flask-sklearn$ make setup
+azureuser@Azure:~/flask-sklearn$ source ~/.flask-sklearn/bin/activate
+```
+
+Ensure that all tests pass locally:
+```bash
+(.flask-sklearn) azureuser@Azure:~/flask-sklearn$ make all
+```
+![Passing tests locally](screenshots/02_Cloud_Shell_make_all_passing_tests.PNG "Passing tests locally")
+
+Enable Github Actions by clicking on 'Actions', then click on "set up a workflow yourself' and use the file [.github/workflows/python-app.yml](.github/workflows/python-app.yml) as a template.
+
+Once the workflow is created it is automatically triggered and should show a passing build:
+![Passing build](screenshots/03_GitHub_Actions_passing_build.PNG "Passing build")
+
 
 ### Deploying to Azure App Services
 Install the app to Azure app services using the free tier:
@@ -131,11 +140,20 @@ Test the remote webapp:
 ```bash
 (.flask-sklearn) azureuser@Azure:~/flask-sklearn$ ./make_predict_azure_app.sh
 ```
-
 ![Test remotely](screenshots/S7-make_predict_azure_app.sh.PNG "Test remotely")
 
-### Setting up CI/CD using Azure Pipelines
+Logs of your running webapp can be accessed in two ways:
 
+A. Via the public endpoint by appending '/api/logs/docker': https://flask-.sklearn.scm.azurewebsites.net/api/logs/docker
+
+B. Via your cloud shell as a stream:
+```bash
+(.flask-sklearn) azureuser@Azure:~/flask-sklearn$ az webapp log tail
+```
+![Streamed webapp logs](screenshots/S13-webapp-logs.PNG "Streamed webapp logs")
+
+
+### Setting up CI/CD using Azure Pipelines
 At the time of writing the following steps were sufficient to setup a pipeline.
 As things change quite fast in a cloud environment please consult the [official documentation provided by Microsoft](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops) in case of unclarities.
 
