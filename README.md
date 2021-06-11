@@ -17,13 +17,11 @@ Further improvements to the project are discussed in [enhancements](#enhancement
 A short [demo](#demo) concludes the documentation.
 
 
-<TODO: complete this with an overview of your project>
-
 ## Project Plan
 
-The [yearly project plan](../projectplan/project-plan_2021.xlsx) depicts that DevOps automation is one essential step in the context of the overall project planned for Q2.
+The [yearly project plan](/projectplan/project-plan_2021.xlsx) depicts that DevOps automation is one essential step in the context of the overall project planned for Q2.
 
-The [quarterly project plan](../projectplan/project-plan_2021_Q2.xlsx) details the steps necessary for building the CI-CD pipeline, estimates the week by week deliverables and the effort associated to each deliverable in T-Shirt-Sizes (S,M,L).
+The [quarterly project plan](/projectplan/project-plan_2021_Q2.xlsx) details the steps necessary for building the CI-CD pipeline, estimates the week by week deliverables and the effort associated to each deliverable in T-Shirt-Sizes (S,M,L).
 
 The [Trello board](https://trello.com/b/ppxOVR52/ml-application) is then used for task planning and tracking.
 
