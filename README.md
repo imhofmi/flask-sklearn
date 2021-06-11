@@ -4,7 +4,7 @@
 This project demonstrates the advantages of automating DevOps with CI/CD pipelines.
 A Machine Learning web application is built, test, and deployed using Github Actions and Azure pipelines.
 
-The [project plan](#projectplan) is followed by [instructions](#instructions) that detail the following steps:
+The [project plan](#project-plan) is followed by [instructions](#instructions) that detail the following steps:
 
    * [Cloning and testing locallcy](#cloning-and-testing-locally)
 
@@ -85,7 +85,7 @@ azureuser@Azure:~/flask-sklearn$ source ~/.flask-sklearn/bin/activate
 ![Clone repo / Create virtual environment](screenshots/S1-clone-make-source.PNG "Clone repo / Create virtual environment")
 
 
-Build and install locally:
+Build locally (install dependencies, lint, test):
 ```bash
 azureuser@Azure:~/flask-sklearn$ make all
 ```
@@ -101,7 +101,6 @@ Run the application locally:
 ![Run project](screenshots/S3-flask-run.PNG "Run project")
 
 Test it locally in a new Azure cloud shell (as your first shell is blocked by 'flask run') :
-
 ```bash
 azureuser@Azure:~$ source .flask-sklearn/bin/activate
 (.flask-sklearn) azureuser@Azure:~$ cd flask-sklearn/
@@ -116,7 +115,6 @@ Close the second cloud shell and stop flask by hitting CRTL-C in the first cloud
 
 ### Deploying to Azure App Services
 Install the app to Azure app services using the free tier:
-
 ```bash
 (.flask-sklearn) azureuser@Azure:~/flask-sklearn$ az webapp up -n flask-sklearn --sku F1
 ```
@@ -127,10 +125,9 @@ Check it the app is up and running by opening the URL containing the webapp name
 
 ![Running webapp](screenshots/S6-webapp-running.PNG "Running webapp")
 
-Edit file 'make_predict_azure_app.sh' and relace '<yourappname>' with your webapp name (e.g. flask-sklearn).
+Edit file 'make_predict_azure_app.sh' and replace '< yourappname >' with your webapp name (e.g. flask-sklearn).
 
 Test the remote webapp:
-
 ```bash
 (.flask-sklearn) azureuser@Azure:~/flask-sklearn$ ./make_predict_azure_app.sh
 ```
@@ -144,7 +141,7 @@ As things change quite fast in a cloud environment please consult the [official 
 
 Open Azure devops in a browser https://dev.azure.com.
 
-Creating a new project or selecting an existing project.
+Create a new project or selecting an existing project.
 
 Head to Pipelines and click on 'New pipeline'.
 
