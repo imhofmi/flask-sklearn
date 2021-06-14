@@ -130,7 +130,7 @@ Install the app to Azure app services using the free tier:
 
 ![Install to Azure app services](screenshots/S5-az-webapp-up.PNG "Install to Azure app services")
 
-Check it the app is up and running by opening the URL containing the webapp name provided in the previous step: https://flask-sklearn.azurewebsites.net/
+Check if the app is up and running by opening the URL containing the webapp name provided in the previous step: https://flask-sklearn.azurewebsites.net/
 
 ![Running webapp](screenshots/S6-webapp-running.PNG "Running webapp")
 
@@ -144,13 +144,22 @@ Test the remote webapp:
 
 Logs of your running webapp can be accessed in two ways:
 
-A. Via the public endpoint by appending '/api/logs/docker': https://flask-.sklearn.scm.azurewebsites.net/api/logs/docker
+A. Via the public endpoint by appending '/api/logs/docker': https://flask-sklearn.scm.azurewebsites.net/api/logs/docker
 
 B. Via your cloud shell as a stream:
 ```bash
 (.flask-sklearn) azureuser@Azure:~/flask-sklearn$ az webapp log tail
 ```
 ![Streamed webapp logs](screenshots/S13-webapp-logs.PNG "Streamed webapp logs")
+
+Performance validation of the webapp can be performed via a load test using [locust](https://locust.io).
+Replace '< yourappname >' in the provided configuration and call locust:
+```bash
+(.flask-sklearn) azureuser@Azure:~/flask-sklearn$ nano locustfile.py
+(.flask-sklearn) azureuser@Azure:~/flask-sklearn$ locust -f locustfile.py --headless -u 20 -r 5 -t 20s
+```
+Using the parameters above locust will use 20 users with a spawn rate of 5 users per second and run for 20 seconds:
+![Load test using locust](screenshots/S14-load-test-locust.PNG "Load test using locust")
 
 
 ### Setting up CI/CD using Azure Pipelines
