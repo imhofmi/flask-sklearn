@@ -1,4 +1,4 @@
-# Agile Devlopment with Azure Project: Building a CI/CD Pipeline
+# Agile Development with Azure Project: Building a CI/CD Pipeline
 
 ## Overview
 This project demonstrates the advantages of automating DevOps with CI/CD pipelines.
@@ -192,23 +192,36 @@ Change the application name in app.py from 'Sklearn Prediction Home' to 'Sklearn
 (.flask-sklearn) azureuser@Azure:~/flask-sklearn$ git commit -m "Changed application name"
 (.flask-sklearn) azureuser@Azure:~/flask-sklearn$ git push
 ```
-
 ![Change application name](screenshots/S10-change-application-name.PNG "Change application name")
 
+The pipeline is triggered by the commit:
 ![Next pipeline run](screenshots/S11-next-pipeline-run.PNG "Next pipeline run")
 
+After the pipeline run completed successfully the changed application name is visible:
 ![Updated webapp](screenshots/S12-webapp-running-new-name.PNG "Updated webapp")
 
 
 
 
-
+<!-- 
 ## Enhancements
 
-<TODO: A short description of how to improve the project in the future>
+<TODO: A short description of how to improve the project in the future> -->
 
-## Demo 
+<!-- ## Demo 
 
 <TODO: Add link Screencast on YouTube>
 
+<TODO: 
+The README includes a link to the screencast on YouTube, which meets the following criteria:
 
+Screencast is 1-5 minutes in length
+Audio is clear
+Video is 1080P or higher and text visible
+The screencast shows the entire process of the working application, including a demonstration of:
+
+Working Azure Cloud Shell environment for Continuous Integration
+Working GitHub Actions build
+Successful deployment using Continuous Delivery on the Azure platform.
+Successful machine learning prediction that returns back a JSON payload
+> -->
