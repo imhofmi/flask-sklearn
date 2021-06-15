@@ -200,28 +200,26 @@ The pipeline is triggered by the commit:
 After the pipeline run completed successfully the changed application name is visible:
 ![Updated webapp](screenshots/S12-webapp-running-new-name.PNG "Updated webapp")
 
-
-
-
 <!-- 
 ## Enhancements
 
 <TODO: A short description of how to improve the project in the future> -->
 
-<!-- ## Demo 
+## Demo
 
-<TODO: Add link Screencast on YouTube>
+A short demo demonstrates the main steps of the project:
+[Demo Video](demo/demo.mp4)
 
-<TODO: 
-The README includes a link to the screencast on YouTube, which meets the following criteria:
-
-Screencast is 1-5 minutes in length
-Audio is clear
-Video is 1080P or higher and text visible
-The screencast shows the entire process of the working application, including a demonstration of:
-
-Working Azure Cloud Shell environment for Continuous Integration
-Working GitHub Actions build
-Successful deployment using Continuous Delivery on the Azure platform.
-Successful machine learning prediction that returns back a JSON payload
-> -->
+The demo covers the following steps:
+> Welcome to the demo of our agile development project.
+> We built a machine learning application and automated testing and provisioning by continuous integration and continuous deployment using pipelines.
+>
+> As shown in the project architecture the source code is maintained in Github.
+> The project can be manually checked out in cloud shell and tested by calling 'make all'.
+>
+> GitHub Actions are used for Continuous Integration to check the project build status upon every commit.
+>
+> Azure Pipelines are used for Continuous Integration and Continuous Deployment of our machine learning application to App Services.
+> The application can be accessed via a public endpoint.
+> The logs are accessible via that endpoint or can be streamed in the cloud shell.
+> The main functionality of the application is exposed via an API and can be accessed from the cloud shell.
