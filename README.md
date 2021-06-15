@@ -118,7 +118,7 @@ Ensure that all tests pass locally:
 ```
 ![Passing tests locally](screenshots/02_Cloud_Shell_make_all_passing_tests.PNG "Passing tests locally")
 
-Enable Github Actions by clicking on 'Actions', then click on "set up a workflow yourself' and use the file [.github/workflows/python-app.yml](.github/workflows/python-app.yml) as a template.
+Enable Github Actions by clicking on 'Actions', then click on "set up a workflow yourself' and use the GitHub Actions yaml file [.github/workflows/python-app.yml](.github/workflows/python-app.yml) as a template.
 
 Once the workflow is created it is automatically triggered and should show a passing build:
 ![Passing build](screenshots/03_GitHub_Actions_passing_build.PNG "Passing build")
