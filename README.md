@@ -1,3 +1,5 @@
+[![Python application test with Github Actions](https://github.com/imhofmi/flask-sklearn/actions/workflows/python-app.yml/badge.svg)](https://github.com/imhofmi/flask-sklearn/actions/workflows/python-app.yml)
+
 # Agile Development with Azure Project: Building a CI/CD Pipeline
 
 ## Overview
