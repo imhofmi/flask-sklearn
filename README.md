@@ -200,10 +200,13 @@ The pipeline is triggered by the commit:
 After the pipeline run completed successfully the changed application name is visible:
 ![Updated webapp](screenshots/S12-webapp-running-new-name.PNG "Updated webapp")
 
-<!-- 
-## Enhancements
 
-<TODO: A short description of how to improve the project in the future> -->
+## Enhancements
+Future improvements include but are not limited to:
+* Additional testing using pytest: Testcases could be added that are automatically checked by a Makefile target.
+* Code coverage using pytest-cov: In addition to testing code coverage could be checked in an automated way via a Makefile target.
+* Automation of the load testing using locust: While the instructions in the [Deploying to Azure App Services](#deploying-to-azure-app-services) section depict the initial use of locust for load testing it could be included as an additional target in the Makefile.
+
 
 ## Demo
 
