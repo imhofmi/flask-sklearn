@@ -26,9 +26,9 @@ A short [demo](#demo) concludes the documentation.
 
 ## Project Plan
 
-The [yearly project plan](../raw/main/projectplan/project-plan_2021.xlsx) depicts that DevOps automation is one essential step in the context of the overall project planned for Q2.
+The [yearly project plan](../../raw/main/projectplan/project-plan_2021.xlsx) depicts that DevOps automation is one essential step in the context of the overall project planned for Q2.
 
-The [quarterly project plan](../raw/main/projectplan/project-plan_2021_Q2.xlsx) details the steps necessary for building the CI-CD pipeline and estimates the week by week deliverables as well as the effort associated to each deliverable in T-Shirt-Sizes (S,M,L).
+The [quarterly project plan](../../raw/main/projectplan/project-plan_2021_Q2.xlsx) details the steps necessary for building the CI-CD pipeline and estimates the week by week deliverables as well as the effort associated to each deliverable in T-Shirt-Sizes (S,M,L).
 
 The [Trello board](https://trello.com/b/ppxOVR52/ml-application) is then used for task planning and tracking.
 
@@ -211,7 +211,7 @@ Future improvements include but are not limited to:
 ## Demo
 
 A short demo demonstrates the main steps of the project:
-[Demo Video](../raw/main/demo/demo.mp4)
+[Demo Video](../../raw/main/demo/demo.mp4)
 
 The demo covers the following steps:
 > Welcome to the demo of our agile development project.
